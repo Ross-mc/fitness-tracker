@@ -18,7 +18,7 @@ router.post("/api/workouts", (req, res) => {
 });
 
 router.get("/api/workouts", (req, res) => {
-  Workout.findOne({})
+  Workout.find({})
     .then((foundWorkouts) => res.json(foundWorkouts))
     .catch((err) => res.json(err));
 });
