@@ -12,8 +12,6 @@ const API = {
   },
   async addExercise(data) {
     const id = location.search.split("=")[1];
-    console.log('id inside addEx,', id)
-    console.log('data inside addEx', data)
     const res = await fetch("/api/workouts/" + id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -25,7 +23,6 @@ const API = {
     return json;
   },
   async createWorkout(data = {}) {
-    console.log('data inside createworkout', data)
     const res = await fetch("/api/workouts", {
       method: "POST",
       body: JSON.stringify(data),
