@@ -30,6 +30,8 @@ const API = {
       headers: { "Content-Type": "application/json" }
     });
 
+    console.log(data)
+
     const json = await res.json();
 
     return json;
