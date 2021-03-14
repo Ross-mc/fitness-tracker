@@ -12,10 +12,7 @@ router.put("/api/workouts/:id", (req, res) => {
 });
 
 router.post("/api/workouts", (req, res) => {
-  console.log(req)
-  const workout = new db.Workout();
-  console.log('i am the workout,' , workout)
-  db.Workout.create(workout)
+  db.Workout.create({})
     .then((workoutsDB) => {console.log(workoutsDB); res.json(workoutsDB)})
     .catch((err) => res.json(err));
 });
