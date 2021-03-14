@@ -12,7 +12,11 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true });
+const mongooseConnection = process.env.MONGODB_URI || "mongodb://localhost/userdb";
+
+console.log(mongooseConnection)
+
+mongoose.connect(mongooseConnection, { useNewUrlParser: true });
 
 app.use(express.static("public"));
 app.use(require("./routes/htmlroutes"));
